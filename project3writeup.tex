@@ -1,0 +1,134 @@
+\documentclass[letterpaper,10pt,titlepage]{article}
+
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+
+\usepackage{alltt}
+\usepackage{float}
+\usepackage{color}
+\usepackage{url}
+\usepackage{listings}
+
+\usepackage{balance}
+\usepackage[TABBOTCAP, tight]{subfigure}
+\usepackage{enumitem}
+\usepackage{pstricks, pst-node}
+
+\usepackage{geometry}
+\geometry{textheight=8.5in, textwidth=6in}
+
+%random comment
+
+\newcommand{\cred}[1]{{\color{red}#1}}
+\newcommand{\cblue}[1]{{\color{blue}#1}}
+
+\usepackage{hyperref}
+\usepackage{geometry}
+
+\def\name{Bradley Imai and Daniel Ross}
+
+%pull in the necessary preamble matter for pygments output
+% \input{pygments.tex}
+
+%% The following metadata will show up in the PDF properties
+\hypersetup{
+  colorlinks = true,
+  urlcolor = black,
+  pdfauthor = {\name},
+  pdfkeywords = {CS444 ``operating systems'' files filesystem I/O},
+  pdftitle = {CS 444 Project 3},
+  pdfsubject = {CS 444 Project 3},
+  pdfpagemode = UseNone
+}
+
+\begin{document}
+
+\begin{titlepage}
+    \begin{center}
+        \vspace*{3.5cm}
+
+        \textbf{Project 3}
+
+        \vspace{0.5cm}
+
+        \textbf{Bradley Imai and Daniel Ross}
+
+        \vspace{0.8cm}
+
+        CS 444\\
+        Spring 2017\\
+        22 May 2017\\
+
+        \vspace{1cm}
+
+        \textbf{Abstract}\\
+
+        \vspace{0.5cm}
+
+        In developing a fundamental understand of low-level systems, block devices and encryptions an essential component.  The following assignment takes on the Linux Crypto API in order to ensure valid encryption of files. The final result of what we have implemented is a driver mounted device which uses the block driver. \vfill
+
+
+    \end{center}
+\end{titlepage}
+
+\newpage
+
+\section{Design plan to use to implement the necessary algorithms}
+
+The design was mostly consisted of learning how block devices work and adding crypto to the transfer data in the block device. Making the modules meet the specifications for the module parameters led us to research how the crypto library takes input.
+
+\section{Version Control Log Github}
+\begin{tabular}{lll} \textbf{Author}
+     & \textbf{Date}
+     & \textbf{Message}
+\\ \hline
+Bradimai & 2017-16-3 & Initial commit pushing starting files \\ \hline
+RossDan96 & 2017-16-3 &  finished concurrency3 assignment\\ \hline
+RossDan96 & 2017-20-3 &  SBD.c and it's build configuration\\ \hline
+RossDan96 & 2017-22-3 &  created patch file\\ \hline
+Bradimai & 2017-16-3 &  pushed makefile\\ \hline
+Bradimai & 2017-16-3 &  writing assignment3\\ \hline
+\end{tabular}
+
+NOTE: debugging was happening in the VM so there are not as many commits
+
+\section{Work Log}
+\begin{tabular}{lll} \textbf{where}
+     & \textbf{Date}
+     & \textbf{what we did}
+
+\\ \hline
+OWen & 2017-16-2 & started the concurrency3 in recitation  \\ \hline
+Library & 2017-16-3 & finished the concurrency3 assignment \\ \hline
+Linc & 2017-18-3 &  began project 3\\ \hline
+linc & 2017-20-4 &  Module to compile\\ \hline
+library & 2017-21-5 &  Added crypto to module\\ \hline
+library & 2017-22-5 &  created patch file and typed up writing assignment\\ \hline
+\end{tabular}
+
+We started the concurrency 3 solution a while back in one of our recitation and later finsihed the assignment at the library. We later met up at the library again to start of project 3. Contiuning to meet up at the library for the next couple of days to finish up our assignment. Finally on the due date, 5/22 we finished our assignment with the written portion of the project and turned it in.
+
+\section{Project Questions}
+
+\textit{What do you think the main point of this assignment is?}\\
+
+The understanding of Linux block devices, modules, and Crypto API were the main points we got from this assignment. Another main point from his assignment was to understand how to bring modules into the Virtual Machine (VM) in order to  establish a foundation on importing Linux modules.\\
+
+\textit{How did you personally approach the problem? Design decisions, algorithm, etc.}\\
+
+First we took a look at the project 3 requirements and and made sure we had a good understanding of what had to be done. After understanding the problem, we took a look a previous uses of kernel crypto libraries such as crypto loops. We also took a long time in understanding the module and how to get it up and running.\\
+
+\textit{How did you ensure your solution was correct? Testing details, for instance.}\\
+
+After running the modules successfully on our VM, we ensured that the module print outs were showing consistant encryption and decryption. We repeated this process for running the module for set parameters. \\
+
+\textit{What did you learn?}\\
+\begin{itemize}
+\item Understood how modules are built into the kernel
+\item How crypto library is used within the Kernel
+\item Gained experience working with poorly documented libraries
+\end{itemize}
+
+\end{document}
